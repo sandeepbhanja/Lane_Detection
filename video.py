@@ -22,12 +22,6 @@ def getROI(image):
 
 
 def getLines(image):
-    # lines=cv2.HoughLinesP(image,bin_size,precision,threshold,dummy 2d array--no use,minLineLength,maxLineGap)
-    # lets take bin size to be 2 pixels
-    # lets take precision to be 1 degree= pi/180 radians
-    # threshold is the votes that a bin should have to be accepted to draw a line
-    # minLineLength --the minimum length in pixels a line should have to be accepted.
-    # maxLineGap --the max gap between 2 broken line which we allow for 2 lines to be connected together.
     lines = cv2.HoughLinesP(image, 2, np.pi / 180, 100, np.array([]), minLineLength=40, maxLineGap=5)
     return lines
 
@@ -90,7 +84,7 @@ def getSmoothLines(image, lines):
 
 
 
-videoFeed = cv2.VideoCapture("test_video.mp4")
+videoFeed = cv2.VideoCapture("test_video(1).mp4")
 
 try:
   while videoFeed.isOpened() :
