@@ -71,5 +71,8 @@ lines = getLines(roi_image)             # Step 3
 smooth_lines = getSmoothLines(image, lines)    # Step 5
 image_with_smooth_lines = displayLines(image, smooth_lines) # Step 4
 
-cv2.imshow("Output", image_with_smooth_lines)
+cv2.imshow("Final", image_with_smooth_lines)
+cv2.imshow("ROI", roi_image)
+cv2.imshow("Edges", edged_image)
+
 cv2.waitKey(0)
